@@ -53,7 +53,7 @@ def generate_questions_app():
     # Modi was born and raised in Vadnagar in northeastern Gujarat, where he completed his secondary education. He was introduced to the RSS at age eight. His account of helping his father sell tea at the Vadnagar railway station has not been reliably corroborated. At age 18, he was married to Jashodaben Modi, whom he abandoned soon after, only publicly acknowledging her four decades later when legally required to do so. Modi became a full-time worker for the RSS in Gujarat in 1971. After the state of emergency was declared by Prime Minister Indira Gandhi in 1975, he went into hiding. The RSS assigned him to the BJP in 1985 and he held several positions within the party hierarchy until 2001, rising to the rank of general secretary.[c]'''
     context = st.text_area("Enter the context:")
 
-    new_reader = FARMReader(model_name_or_path="Kunjesh07/bert-base-answer-generation")
+    new_reader = FARMReader(model_name_or_path="bert-base-answer-generation")
 
     tokenizer = AutoTokenizer.from_pretrained("Kunjesh07/t5-base-question-generation-model")
     model = AutoModelWithLMHead.from_pretrained("Kunjesh07/t5-base-question-generation-model")
