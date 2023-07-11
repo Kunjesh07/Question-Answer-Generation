@@ -48,12 +48,12 @@ from collections import OrderedDict
 def generate_questions_app():
     st.title("Question Generation and Answering")
     st.write("Enter the context and specify the number of questions to generate.")
-    access_token = "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"
+    # access_token = "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"
     # context = '''Narendra Damodardas Modi is an Indian politician who has served as the 14th Prime Minister of India since May 2014. Modi was the Chief Minister of Gujarat from 2001 to 2014 and is the Member of Parliament (MP) for Varanasi. He is a member of the Bharatiya Janata Party (BJP) and of the Rashtriya Swayamsevak Sangh (RSS), a right-wing Hindu nationalist paramilitary volunteer organisation. He is the longest-serving non-Congress prime minister and the fourth longest-serving prime minister of all time.
     # Modi was born and raised in Vadnagar in northeastern Gujarat, where he completed his secondary education. He was introduced to the RSS at age eight. His account of helping his father sell tea at the Vadnagar railway station has not been reliably corroborated. At age 18, he was married to Jashodaben Modi, whom he abandoned soon after, only publicly acknowledging her four decades later when legally required to do so. Modi became a full-time worker for the RSS in Gujarat in 1971. After the state of emergency was declared by Prime Minister Indira Gandhi in 1975, he went into hiding. The RSS assigned him to the BJP in 1985 and he held several positions within the party hierarchy until 2001, rising to the rank of general secretary.[c]'''
     context = st.text_area("Enter the context:")
 
-    new_reader = FARMReader(model_name_or_path="Kunjesh07/bert-base-answer-generation", use_auth_token=access_token)
+    new_reader = FARMReader(model_name_or_path="Kunjesh07/bert-base-answer-generation")
 
     tokenizer = AutoTokenizer.from_pretrained("Kunjesh07/t5-base-question-generation-model")
     model = AutoModelWithLMHead.from_pretrained("Kunjesh07/t5-base-question-generation-model")
